@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Start</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="static/styles/main.css">
+    <header class="page-header header container-fluid"></header>
+    <style>
+
+ #submitButton{
+	 color: var(--color);
+	 transition: 0.25s;
+}
+ #submitButton:hover, button:focus {
+	 border-color: var(--hover);
+	 color: rgb(0, 0, 0);
+}
+ #submitButton {
+	 background: none;
+	 border: 2px solid;
+	 font: inherit;
+	 line-height: 1;
+	 margin: 0.5em;
+	 padding: 1em 2em;
+}
+/* text field */
+input[type="text"] {
+  box-sizing: border-box;
+  width: 100%;
+  height: calc(4em + 1px);
+  margin: 0 0 1em;
+  padding: 1em;
+  border: 1px solid #ccc;
+  background: #fff;
+  resize: none;
+  outline: none;
+}
+input[type="text"][required]:focus {
+  border-color: #002efa;
+}
+input[type="text"][required]:focus + label[placeholder]:before {
+  color: #2e00fa;
+}
+input[type="text"][required]:focus + label[placeholder]:before,
+input[type="text"][required]:valid + label[placeholder]:before {
+  transition-duration: .2s;
+  transform: translate(0, -1.5em) scale(0.9, 0.9);
+}
+input[type="text"][required]:invalid + label[placeholder][alt]:before {
+  content: attr(alt);
+}
+input[type="text"][required] + label[placeholder] {
+  display: block;
+  pointer-events: none;
+  line-height: 1em;
+  margin-top: calc(-3em - 2px);
+  margin-bottom: calc((3em - 1em) + 2px);
+}
+
+input[type="text"][required] + label[placeholder]:before {
+  content: attr(placeholder);
+  display: inline-block;
+  margin: 0 calc(1em + 2px);
+  padding: 0 2px;
+  color: #898989;
+  white-space: nowrap;
+  transition: 0.3s ease-in-out;
+  background-image: linear-gradient(to bottom, #fff, #fff);
+  background-size: 100% 5px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+/*might mess up*/
+.gradient-text {
+  /* Fallback: Set a background color. */
+  background-color: blue;
+  
+  /* Create the gradient. #f3ec78, #af4261 */
+  background-image: linear-gradient(45deg, #0434de, #ffffff);
+  
+  /* Set the background size and repeat properties. */
+  background-size: 100%;
+  background-repeat: repeat;
+
+  /* Use the text as a mask for the background. */
+  /* This will show the gradient as a text color rather than element bg. */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; 
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent;
+}
+
+
+/* Style the rest of the h2 */
+h1 {
+  font-family: "Archivo Black", sans-serif;
+  font-weight: normal;
+  font-size: 6em;
+  text-align: center;
+  margin-bottom: 0;
+  margin-bottom: -0.25em;
+}
+h4{
+  color: #9896ff
+}
+
+    </style>
+</head>
+
+<body>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+
+<nav class="navbar navbar-expand-md">
+  <a class="navbar-brand" href="/">
+      <img src="static/styles/logo.png" alt="Logo" style="width:100px">
+  </a>
+  <button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#main-navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="main-navigation">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="https://www.chewy.com/app/login">your account</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<div class:"container">
+  <div class="align-text-top">
+    <!-- <h2 class="text-center"; style="font-family:verdana">TODAY'S WALK</h2> -->
+    <div class "text-center"><h1 class="gradient-text">Add-a-Walk</h1></div>
+
+     <h4 style="position:absolute; top:200px; left:100px "> 🐕 Keep progress of you and your furry friend's <br>distance walked in order to <br>gain more 🌟 ChewyCoins 🌟</h4>
+
+
+    <link href="https://fonts.googleapis.com/css?family=Archivo+Black&display=swap" rel="stylesheet">
+
+  </div>
+
+  <div class="align-middle">
+    <img src="static/styles/cat.gif" alt="something" />
+  </div>
+  <div class="align-bottom">
+    <div class="align-middle">
+    <div class="row">
+    <div class="col-xs-12 col-xs-offset-12">
+    <div class="input-group centered">
+              <form>
+                <input required='' type='text' id="distance">
+                <label alt='Distance' placeholder='Type distance walked.'></label>
+              </form>
+              <span class="input-group-btn"><div  onclick="getUserDistance();">
+                  <div onclick="submittedButton()"><button id="submitButton" onclick="myFunction()">Submit</button></div></div>
+                  <script>
+                    function myFunction() {
+                      swal("Pawsome! 🐶", "Distance submitted confirmation!", "success", {buttons: ["Return 🏠", "View history 📖"],})
+                      .then((willDelete) => {
+                        if (willDelete) {
+                          window.location.href = "history";
+                        } else { 
+                          window.location.href = "/";
+                        }
+                        });
+                    }
+                      function submittedButton() {
+                      var xhr = new XMLHttpRequest();
+                      var userInput = document.getElementById('distance').value;
+                      xhr.open('POST', '/submitted', true);
+                      xhr.send(userInput);
+                      }
+                  </script>
+              </span>
+
+    </div><!-- /input-group -->
+    </div><!-- /.col-lg-4 -->
+    </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
